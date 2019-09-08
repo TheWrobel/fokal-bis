@@ -1,0 +1,185 @@
+@import 'variables';
+@import 'reset';
+@import 'global';
+@import 'text';
+@import 'slider';
+
+//views
+@import 'homepage';
+@import 'uslugi';
+@import 'kontakt';
+
+body {
+    background-color: $primary-dark;
+    min-height: 100vh;
+    position: relative;
+}
+.header-bg {
+    background: url(../../src/images/landscape.jpg) ;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+.nav {
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient($transparent-black);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    &-group {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 200px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    &-logo {
+        width: 250px;
+        height: 53px;
+        margin: 0 auto;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Rubik', sans-serif;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        
+        &-title {
+            font-size: 45px;
+            font-weight: 700;
+            line-height: 53px;
+            color: white;
+        }
+        
+        &-subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            color: $grey;
+        }
+    }
+
+    &-menu {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 50px;
+        
+        &-link {
+            position: relative;
+            line-height: 24px;
+            font-size: 16px;
+            padding-bottom: 10px;
+            
+            &::after {
+                content: '';
+                width: 100%;
+                height: 3px;
+                background: $primary-green;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+                transform: translateY(5px);
+                transition: 0.2s ease-in-out;
+            }
+            &:hover::after {
+                display: block;
+                transform: translate(0,0);
+                opacity: 1;
+            }
+        }
+        &-link.active {
+            &::after {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    }
+}
+.overlay {
+    height: 100vh;
+    width: 100%;
+    opacity: .05;
+    position: fixed;
+    z-index: -1;
+    background-image: url(../../src/images/zdjecia.jpeg);
+    background-size: cover;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+
+    
+    &-contact {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    &-socials {
+        &-link {
+            font-size: 30px;
+            margin: 0px 10px;
+        }
+    }
+    &-email {
+        color: $primary-green;
+    }
+    
+    &-adress, &-email, &-phone, &-contact {
+        margin: 5px;
+    }
+    
+}
+@media (min-width: 780px) {
+    .footer {
+        padding: 15px;
+        max-width: 960px;
+        margin: 0 auto;
+        height: 80px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+
+@media (min-width: 850px) {
+    .nav {
+        &-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 960px;
+            align-items: center;
+        }
+        
+        .nav-menu .nav-menu-link {
+            font-size: 20px;
+            
+        }
+        &-logo {
+            margin: 0;
+        }
+
+        &-menu {
+            margin: 0;
+            width: 100%;
+            max-width: 550px;
+            justify-content: space-evenly;
+        }
+    }
+}
+

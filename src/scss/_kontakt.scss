@@ -1,0 +1,171 @@
+.kontakt {
+    .main {
+        margin: 20px 5px;
+    }
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .form {
+            max-width: 476px;
+            width: 100%;
+            height: 530px;
+            background: rgba($lighter-dark, 0.7);
+            margin: 15px;
+            font-weight: 500;
+            margin: 0 auto;
+            
+            .contact-form {
+                margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                padding: 30px 35px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                font-family: 'Roboto', sans-serif;
+                &-group {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            
+            .label {
+                margin-bottom: 10px;
+                color: #989898;
+                font-size: 18px;
+            }
+            
+            input, .textarea {
+                outline: none;
+                margin: 10px 0;
+                border: none;
+                font-size: 14px;
+                width: 100%;
+                border-radius: 5px;
+                padding-left: 35px;
+                padding-right: 35px;
+                color: $primary-dark;
+                font-weight: 500;
+                box-sizing: border-box;
+                font-family: 'Roboto', sans-serif;
+            }
+            
+            input[type=text], input[type=email] {
+                height: 45px;
+            }
+            
+            .textarea {
+                height: 130px;
+                margin-top: 10px;
+                border-radius: 5px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                color: $primary-dark;
+                resize: none;
+            }
+            
+            &-btn {
+                background: $green;
+                width: 130px;
+                height: 45px;
+                color: white;
+                font-size: 18px;
+                font-family: 'Roboto', sans-serif;
+                text-transform: uppercase;
+                font-weight: 500;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover {
+                    background: $darker-green;
+                }
+            }
+        }
+        
+        .cnt {
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            &-text {
+                font-family: 'Roboto', sans-serif;
+                font-size: 18px;
+                line-height: 22px;
+                margin: 30px 0;
+                max-width: 500px;
+                text-align: center;
+            }
+            
+            .map {
+                max-width: 475px;
+                width: 100%;
+            }
+        }
+        
+        
+    }
+    
+    @media (min-width:850px) {
+        .content {
+            margin: 45px auto;
+
+            .cnt {
+                &-text {
+                    font-size: 22px;
+                    line-height: 30px;
+                    font-weight: 500;
+                }
+            }
+        }
+        .content .form .contact-form {
+            align-items: flex-end;
+            
+            &-group {
+                text-align: left;
+
+                .label {
+                    font-size: 20px;
+                }
+            }
+            .form-btn {
+                font-size: 20px;
+                width: 175px;
+            }
+        }
+        .contact-form .contact-form-group {
+            input[type=text], input[type=email] {
+                height: 55px;
+            }
+
+            input, .textarea {
+                font-size: 20px;
+            }
+        }
+        
+        .map {
+            max-width: 475px;
+        }
+        
+        .content {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        overflow: hidden;
+    }
+}

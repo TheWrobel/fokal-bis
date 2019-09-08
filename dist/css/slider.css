@@ -1,0 +1,216 @@
+@charset "UTF-8";
+.slider {
+  position: relative;
+  background: url(slide-bg1.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+
+/* kontener dla wszystkich slajdów */
+.slider-slides-cnt {
+  height: 700px;
+  position: relative;
+}
+
+/* pojedynczy slide */
+.slider-slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0;
+  z-index: 0;
+}
+
+/* slide aktywny */
+.slider-slide-active {
+  z-index: 1;
+}
+
+/* elementy pojedynczego slajdu */
+.slider .element-title {
+  color: #fff;
+  font-family: sans-serif;
+  position: relative;
+  left: -3rem;
+  opacity: 0;
+  font-size: 6rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.slider .element-text {
+  color: #fff;
+  position: relative;
+  left: -3rem;
+  opacity: 0;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-align: center;
+  font-family: serif;
+  font-style: italic;
+  max-width: 60%;
+}
+
+/* animacja slajdów */
+.slider-slide {
+  opacity: 0;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+}
+
+.slider .element-title {
+  left: -3rem;
+  opacity: 0;
+  -webkit-transition: 2s left, 2s opacity;
+  transition: 2s left, 2s opacity;
+}
+
+.slider .element-text {
+  left: -3rem;
+  opacity: 0;
+  -webkit-transition: 2s 1s left, 2s 1s opacity;
+  transition: 2s 1s left, 2s 1s opacity;
+}
+
+/* aktywny slide zmienia właściwości elementów */
+.slider-slide-active {
+  opacity: 1;
+}
+
+.slider-slide-active .element-title {
+  left: 0;
+  opacity: 1;
+}
+
+.slider-slide-active .element-text {
+  left: 0;
+  opacity: 1;
+}
+
+/* przyciski strzałek slajdu */
+.slider-button-prev,
+.slider-button-next {
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4rem;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border: 0;
+  text-indent: -999px;
+  overflow: hidden;
+}
+
+.slider-button-next {
+  left: auto;
+  right: 0;
+}
+
+.slider-button-prev:focus,
+.slider-button-next:focus {
+  outline: none;
+}
+
+.slider-button-prev:before,
+.slider-button-next:before {
+  content: '<';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  color: #fff;
+  text-indent: 0;
+}
+
+.slider-button-next:before {
+  content: '>';
+}
+
+/* slider dots */
+.slider-dots {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+.slider-dots-button {
+  background: transparent;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  text-indent: -999px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.slider-dots-button:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  -webkit-box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+          box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.slider-dots-element-active .slider-dots-button:before {
+  background: #fff;
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
+}
+
+.slider-dots-button:focus {
+  outline: none;
+}

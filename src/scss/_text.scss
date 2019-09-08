@@ -1,0 +1,14 @@
+.text--green {
+    color: $primary-green;
+
+    &:hover {
+        color: darken($primary-green, 5%);
+    }
+}
+.socials-link , .footer-socials-link {
+    transition: all 0.3s;
+}
+
+.socials-link:hover , .footer-socials-link:hover {
+    color: $primary-green;
+}
